@@ -10,7 +10,7 @@ namespace Generics_Program
             Console.WriteLine("Enter the number to compare");
             Console.WriteLine("1 Integers");
             Console.WriteLine("2 Floats");
-            Console.WriteLine("3 String Lengths");
+            Console.WriteLine("3 String");
             int Control = Convert.ToInt32(Console.ReadLine());
             switch (Control)
             {
@@ -21,7 +21,7 @@ namespace Generics_Program
                     int Second_Int = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Enter the third value: ");
                     int Third_Int = Convert.ToInt32(Console.ReadLine());
-                    Max_Integer max_Integer = new Max_Integer(First_Int, Second_Int, Third_Int);
+                    Maximum<int> maximum_int = new Maximum<int>(First_Int, Second_Int, Third_Int);
                     break;
                 case 2:
                     Console.Write("Enter the first value: ");
@@ -30,7 +30,7 @@ namespace Generics_Program
                     float Second_Flo = (float)Convert.ToDouble(Console.ReadLine());
                     Console.Write("Enter the third value: ");
                     float Third_Flo = (float)Convert.ToDouble(Console.ReadLine());
-                    Max_Float max_Float = new Max_Float(First_Flo, Second_Flo, Third_Flo);
+                    Maximum<float> maximum_flo = new Maximum<float>(First_Flo, Second_Flo, Third_Flo);
                     break;
                 case 3:
                     Console.Write("Enter the first value: ");
@@ -39,7 +39,7 @@ namespace Generics_Program
                     string Second_Str = Console.ReadLine();
                     Console.Write("Enter the third value: ");
                     string Third_Str = Console.ReadLine();
-                    Max_String max_String = new Max_String(First_Str, Second_Str, Third_Str);
+                    Maximum<string> maximum_str = new Maximum<string>(First_Str, Second_Str, Third_Str);
                     break;
                 default:
                     Console.WriteLine("Invalid Entry");
@@ -47,27 +47,11 @@ namespace Generics_Program
             }
         }
     }
-    public class Max_Integer
+    public class Maximum<T>
     {
-        public Max_Integer(int First, int Second, int Third)
+        public Maximum(T First, T Second, T Third)
         {
-            int[] Sort = { First, Second, Third };
-            Console.WriteLine("\nThe maximum of the given values is " + Sort.Max());
-        }
-    }
-    public class Max_Float
-    {
-        public Max_Float(float First, float Second, float Third)
-        {
-            float[] Sort = { First, Second, Third };
-            Console.WriteLine("\nThe maximum of the given values is " + Sort.Max());
-        }
-    }
-    public class Max_String
-    {
-        public Max_String(string First, string Second, string Third)
-        {
-            string[] Sort = { First, Second, Third };
+            T[] Sort = new T[] { First, Second, Third };
             Console.WriteLine("\nThe maximum of the given values is " + Sort.Max());
         }
     }
