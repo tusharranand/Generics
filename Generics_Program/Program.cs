@@ -21,7 +21,9 @@ namespace Generics_Program
                     int Second_Int = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Enter the third value: ");
                     int Third_Int = Convert.ToInt32(Console.ReadLine());
-                    Maximum<int> maximum_int = new Maximum<int>(First_Int, Second_Int, Third_Int);
+                    Console.Write("Enter the fourth vlaue: ");
+                    int Fourth_Int = Convert.ToInt32(Console.ReadLine());
+                    Maximum<int> maximum_int = new Maximum<int>(First_Int, Second_Int, Third_Int, Fourth_Int);
                     break;
                 case 2:
                     Console.Write("Enter the first value: ");
@@ -30,7 +32,9 @@ namespace Generics_Program
                     float Second_Flo = (float)Convert.ToDouble(Console.ReadLine());
                     Console.Write("Enter the third value: ");
                     float Third_Flo = (float)Convert.ToDouble(Console.ReadLine());
-                    Maximum<float> maximum_flo = new Maximum<float>(First_Flo, Second_Flo, Third_Flo);
+                    Console.Write("Enter the fourth vlaue: ");
+                    float Fourth_Flo = (float)Convert.ToDouble(Console.ReadLine());
+                    Maximum<float> maximum_flo = new Maximum<float>(First_Flo, Second_Flo, Third_Flo, Fourth_Flo);
                     break;
                 case 3:
                     Console.Write("Enter the first value: ");
@@ -39,7 +43,9 @@ namespace Generics_Program
                     string Second_Str = Console.ReadLine();
                     Console.Write("Enter the third value: ");
                     string Third_Str = Console.ReadLine();
-                    Maximum<string> maximum_str = new Maximum<string>(First_Str, Second_Str, Third_Str);
+                    Console.Write("Enter the fourth vlaue: ");
+                    string Fourth_Str = Console.ReadLine();
+                    Maximum<string> maximum_str = new Maximum<string>(First_Str, Second_Str, Third_Str, First_Str);
                     break;
                 default:
                     Console.WriteLine("Invalid Entry");
@@ -49,9 +55,9 @@ namespace Generics_Program
     }
     public class Maximum<T>
     {
-        public Maximum(T First, T Second, T Third)
+        public Maximum(T First, T Second, T Third, T Fourth)
         {
-            T[] Sort = new T[] { First, Second, Third };
+            T[] Sort = new T[] { First, Second, Third, Fourth };
             Console.WriteLine("\nThe maximum of the given values is " + Sort.Max());
         }
     }
